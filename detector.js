@@ -2,15 +2,16 @@
 //     var button = document.getElementById("hateAdsButton")
 //     button.addEventListener("click", hateOnThemAds)
 // }
-var millisecond = 1000
+let millisecond = 1000
 
-setInterval(() => {
+let interval = setInterval(() => {
     var detectedAd = document.getElementsByClassName("ytp-ad-player-overlay-layout")
-    console.log(detectedAd)
+    console.log("SEARCHING FOR ADS >:(")
+
     if(detectedAd.length > 0 && detectedAd != undefined){
-        let check = "AD DETECTED >:("
-        console.log(check)
-        detectedAd[0].click()
+        console.log("AD DETECTED >:(")
+        hateOnThemAds()
+        clearInterval(interval)
     }
 }, millisecond);
 
